@@ -1,5 +1,3 @@
-import java.util.stream.IntStream;
-
 class Solution {
     public int solution(int[] numbers, int k) {
         int answer = 0;
