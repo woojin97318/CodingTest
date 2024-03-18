@@ -37,7 +37,6 @@ class Solution {
         
         return array;
     }
-    
 }
 
 // import java.util.Arrays;
