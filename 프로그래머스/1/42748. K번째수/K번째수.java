@@ -15,12 +15,24 @@ class Solution {
                 arr[index++] = array[y];
             }
             
-            // arr 오름차순 정렬 (선택정렬)
-            for (int y = 0; y < arr.length; y++) {
-                for (int z = y + 1; z < arr.length; z++) {
-                    if (arr[y] > arr[z])
-                        swap(arr, y, z);
+            // arr 오름차순 정렬
+            // 선택정렬
+            // for (int y = 0; y < arr.length; y++) {
+            //     for (int z = y + 1; z < arr.length; z++) {
+            //         if (arr[y] > arr[z])
+            //             swap(arr, y, z);
+            //     }
+            // }
+            
+            // 삽입 정렬
+            for (int y = 1; y < arr.length; y++) {
+                int temp = arr[y];
+                int z = y - 1;
+                while (z >= 0 && temp < arr[z]) {
+                    arr[z + 1] = arr[z];
+                    z--;
                 }
+                arr[z + 1] = temp;
             }
             
             // arr의 k번째 숫자
