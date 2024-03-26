@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,6 +10,6 @@ class Solution {
             set.add(num);
         }
         
-        return set.size() <= nums.length / 2 ? set.size() : nums.length / 2;
+        return Integer.min(set.size(), nums.length / 2);
     }
 }
