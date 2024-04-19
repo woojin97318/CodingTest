@@ -1,17 +1,23 @@
 class Solution {
     public int solution(int[] ingredient) {
         int answer = 0;
-
-        StringBuilder build = new StringBuilder();
-
-        for(int i=0; i<ingredient.length; i++) {
-            build.append(ingredient[i]);
-            if (build.length()>3 && build.subSequence(build.length()-4, build.length()).equals("1231")) {
+        
+        int[] stack = new int[ingredient.length];
+        int sp = 0;
+        for (int i : ingredient) {
+            stack[sp++] = i;
+            if (
+                sp >= 4 &&
+                stack[sp - 1] == 1 &&
+                stack[sp - 2] == 3 &&
+                stack[sp - 3] == 2 &&
+                stack[sp - 4] == 1
+            ) {
+                sp -= 4;
                 answer++;
-                build.delete(build.length()-4, build.length());
             }
         }
-
+        
         return answer;
     }
 }
